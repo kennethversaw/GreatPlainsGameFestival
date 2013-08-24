@@ -1,0 +1,32 @@
+﻿@using GreatPlainsGameFestival.Helpers
+
+<div id="fb-root"></div>
+<script>    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=205809046149225";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+<!-- ***************** - LOGO - ***************** -->
+<a href="@Url.Action("Index", "Home")" class="logo">
+    <img src="@Url.Content("~/Content/images/GPGF_logo.png")" alt="Karma Website Template" /></a>
+<!-- ***************** - END LOGO - ***************** -->
+<!-- ***************** - Main Navigation - *******F********** -->
+<ul id="menu-main-nav">
+    
+    
+    <li @if(Html.IsCurrentAction("", "Sessions|Speakers" )){ <text>class="current_page_item"</text> }><a href="@Url.Action("Index", "Sessions")"><span><strong>Register</strong><span class="navi-description">Information</span></span></a>
+        <ul>
+            <li><a href="@Url.Action("Index", "Sessions")"><span>Sessions</span></a></li>
+            <li><a href="@Url.Action("Index", "Speakers")"><span>Speakers</span></a></li>
+            <li><a href="@Url.Action("SlidesAndDemos", "Sessions")"><span>Slides & Demos</span></a></li>
+        
+        </ul>
+    </li>
+   
+    <li @if(Html.IsCurrentAction("", "About" )){ <text>class="current_page_item"</text> }><a href="@Url.Action("Index", "About")"><span><strong>About</strong><span class="navi-description">Great Plains Game Festival</span></span></a></li>
+    <li @if(Html.IsCurrentAction("", "Contact" )){ <text>class="current_page_item"</text> }><a href="@Url.Action("Index", "Contact")"><span><strong>Contact Us</strong><span class="navi-description">Get in touch!</span></span></a></li>                                                                                             
+    <li @if(Html.IsCurrentAction("", "Sponsors" )){ <text>class="current_page_item"</text> }><a href="@Url.Action("Index", "Sponsors")"><span><strong>Sponsors</strong><span class="navi-description">Thanks!</span></span></a></li>
+</ul>
+<!-- ***************** - END Main Navigation - ***************** -->

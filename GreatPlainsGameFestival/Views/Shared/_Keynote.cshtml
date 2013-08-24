@@ -1,0 +1,24 @@
+﻿@using GreatPlainsGameFestival.Helpers
+<div class="callout-wrap">
+    <h2>Keynote Speaker: <a href="@Url.Action("Index", "Speakers")/#speaker23">Scott Hanselman</a></h2>
+    @if (Html.IsCurrentAction("Index", "Home"))
+    {
+        <div class="modern_img_frame modern_banner_full">
+            <div class="modern_preload_full">
+                <div class="attachment-fadeIn"><img alt="Scott Hanselman" src="@Url.Content("~/Content/images/keynote.png")"/></div></div></div>
+    }
+    else
+    {
+        <div class="modern_img_frame modern_banner_regular">
+    <div class="preload_regular">
+        <div class="attachment-fadeIn"><img src="@Url.Content("~/Content/images/keynote-small.png")" alt="HTML Template" class="medium_banner_image " width="703" height="201" />
+        </div><!-- end attachment-fadeIn -->
+    </div><!-- end preload_regular -->
+</div><!-- end modern_img_frame -->
+    }
+    <h2>@Html.ActionLink("Many problems, many solutions: One ASP.NET", "Details", "Sessions", new {id=3}, null)</h2>
+     <p>   
+        Interesting new solutions to internet problems continue to emerge. Realtime, Web APIs, Mobile, Gmail-style apps in a single page, and hybrids are the norm. Time to abandon .NET? Let's look at what ASP.NET brings to the New Web. .NET is unquestionably and demonstrably able to scale to monster heights, but can it compete in a realtime and javascript heavy world? How will your ASP.NET applications change and what about your existing stuff? Join Scott Hanselman as he breaks down the technologies that you the ASP.NET developer has in your toolbox and how to solve today's problems while still having fun and not selling your soul.
+    </p>
+
+</div>

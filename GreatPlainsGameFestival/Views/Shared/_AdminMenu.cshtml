@@ -1,0 +1,57 @@
+﻿@*<div>
+    <ul class="list">
+        <li><a href="@Url.Action("List", "Attendee")"><span>Registered Attendees</span></a></li>
+        <li><a href="@Url.Action("List", "SessionSubmission")"><span>Submitted Sessions</span></a></li>
+        <li><a href="@Url.Action("Index", "Room")"><span>Rooms</span></a></li>
+        <li><a href="@Url.Action("Index", "TimeSlot")"><span>Time Slots</span></a></li>
+        <li><a href="@Url.Action("Create", "Sessions")"><span>New Session</span></a></li>
+        <li><a href="@Url.Action("Create", "Speakers")"><span>New Speaker</span></a></li>
+        <li><a href="@Url.Action("BulkEmail", "Contact")"><span>Bulk Email</span></a></li>
+        <li><a href="@Url.Action("ChangePassword", "Account")"><span>Change Password</span></a></li>
+        
+    </ul>
+</div><br/>
+*@
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="top-block">
+        <div class="top-holder">
+
+
+
+            <!-- ***************** - Top Toolbar Left Side - ***************** -->
+            <div class="sub-nav">
+                <ul>
+                    <li><strong>Admin Menu:</strong></li>
+                    <li><a href="@Url.Action("List", "Attendee")"><span>Registered Attendees</span></a></li>
+                    <li><a href="@Url.Action("List", "SessionSubmission")"><span>Submitted Sessions</span></a></li>
+                    <li><a href="@Url.Action("List", "Speakers")"><span>Speakers</span></a></li>
+                    <li><a href="@Url.Action("List", "Sessions")"><span>Sessions</span></a></li>
+                    <li><a href="@Url.Action("Index", "Room")"><span>Rooms</span></a></li>
+                    <li><a href="@Url.Action("Index", "TimeSlot")"><span>Time Slots</span></a></li>
+                    <li><a href="@Url.Action("BulkEmail", "Contact")"><span>Bulk Email</span></a></li>
+                    @*<li><a href="@Url.Action("Index", "TShirts")"><span>T-Shirt Sizes</span></a></li>*@
+                    <li><a href="@Url.Action("Index", "Raffle")"><span>Raffle</span></a></li>
+                    <li><a href="@Url.Action("NameTags", "Attendee")"><span>Name tag data</span></a></li>
+                    <li><a href="@Url.Action("CheckIn", "Attendee")"><span>CheckIn</span></a></li>
+                    <li><a href="@Url.Action("ChangePassword", "Account")"><span>Change Password</span></a></li>
+                </ul></div><!-- end sub-nav -->
+            <!-- ***************** - END Top Toolbar Left Side - ***************** -->
+ 
+
+
+            <!-- ***************** - Top Toolbar Right Side - ***************** -->
+            <div class="sub-nav2">
+                <ul>
+                    <li><a href="@Url.Action("LogOff", "Account")"><span>Log Off</span></a></li>
+                </ul>
+            </div><!-- end sub-nav2 -->
+            <!-- ***************** - END Top Toolbar Right Side - ***************** -->
+
+
+
+        </div><!-- end top-holder -->
+    </div>
+    <!-- end top-block -->
+}

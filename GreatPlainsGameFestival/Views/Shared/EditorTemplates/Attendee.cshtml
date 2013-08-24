@@ -1,0 +1,95 @@
+﻿@model GreatPlainsGameFestival.Models.Attendee
+
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Name)
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+</div>
+
+        
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.EmailAddress)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.EmailAddress)
+        @Html.ValidationMessageFor(model => model.EmailAddress)
+    </div>
+</div>
+        
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Location)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Location)
+        @Html.ValidationMessageFor(model => model.Location)
+    </div>
+</div>
+
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.TShirtSize)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.TShirtSize)
+        @Html.ValidationMessageFor(model => model.TShirtSize)
+    </div>
+</div>
+
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.DateRegistered)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.DateRegistered)
+        @Html.ValidationMessageFor(model => model.DateRegistered)
+    </div>
+</div>
+        
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Verified)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Verified)
+        @Html.ValidationMessageFor(model => model.Verified)
+    </div>
+</div>
+        
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.MealReserved)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.MealReserved)
+        @Html.ValidationMessageFor(model => model.MealReserved)
+    </div>
+</div>
+        
+       
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.AfterPartyRsvp)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.AfterPartyRsvp)
+        @Html.ValidationMessageFor(model => model.AfterPartyRsvp)
+    </div>
+</div>
+        
+<div class="element-wrapper">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.AttendanceConfirmed)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.AttendanceConfirmed)
+        @Html.ValidationMessageFor(model => model.AttendanceConfirmed)
+    </div>
+</div>
+        
+

@@ -1,0 +1,39 @@
+﻿@model GreatPlainsGameFestival.Models.Speaker
+
+<div class="callout-wrap">
+    <div class="one_fifth">
+        <img style="max-height:150; max-width:100px;" src="@Url.Content("~/Content/speakers/" + (Model.PhotoUrl ?? "noimage.jpg") )" alt="Photo" />
+    </div>
+    <div class="four_fifth_last">
+        <h3><a id="#speaker@(Model.Id)"></a> @Model.Name</h3>
+        <p>@Html.Raw(Model.Bio.Replace(Environment.NewLine,"<br />"))</p>
+        @if (Model.ContactAllowed || !string.IsNullOrWhiteSpace(Model.WebsiteUrl) || User.IsInRole("Admin"))
+        {
+            <p>
+                @if (!string.IsNullOrWhiteSpace(Model.WebsiteUrl))
+                {
+                    
+                    <a href="@Model.WebsiteUrl">Visit @Model.Name's website.</a>
+                    
+                }
+                @if(!string.IsNullOrWhiteSpace(Model.WebsiteUrl) && Model.ContactAllowed)
+                {
+                    @: | 
+                }
+                @if (Model.ContactAllowed)
+                {
+                   
+                    @Html.ActionLink("Contact " + Model.Name, "Index", "Contact", new {Id = Model.Id}, null)
+                   
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    @:[ 
+                    @Html.ActionLink("Edit Speaker", "Edit", "Speakers", new {Id = Model.Id}, null)
+                    @: ]
+                }
+            </p>
+        }
+    </div>
+</div>
+

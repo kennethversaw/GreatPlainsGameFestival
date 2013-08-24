@@ -1,0 +1,90 @@
+﻿@using GreatPlainsGameFestival.Helpers;
+@using Telerik.Web.Mvc.UI
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+    @{
+        if (ViewBag.Title != null && ViewBag.Title != "" && !ViewBag.Title.Contains("Great Plains Game Festival"))
+        {
+            ViewBag.Title = "Great Plains Game Festival: " + ViewBag.Title;
+        }
+        else
+        {
+            ViewBag.Title = "Great Plains Game Festival";
+        }
+    }
+    <title>@ViewBag.Title</title>
+    <!--[if lte IE 8]><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property="og:title" content="" />
+<meta property="og:type" content="activity" />
+<meta property="og:url" content="http://www.GreatPlainsGameFestival.com" />
+<meta property="og:image" content="http://www.GreatPlainsGameFestival.com/Content/images/logo.png" />
+<meta property="og:site_name" content="Great Plains Game Festival" />
+<meta property="fb:admins" content="794044475" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.2.min.js")" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/karma.js")"></script>
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/karma-cherry.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/forms.css")" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="#" />
+    <!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/lt8.css")" media="screen"/><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/ie8.css")" media="screen"/><![endif]-->
+    @(Html.Telerik().StyleSheetRegistrar().DefaultGroup(group => group.Add("telerik.common.css").Add("telerik.GreatPlainsGameFestival.css").Combined(true).Compress(true)))
+</head>
+<body>
+    <div id="wrapper" class="big-banner">
+        <div id="header">
+            @Html.Partial("_AdminMenu")
+            <div class="header-holder">
+                <div class="rays">
+                    <div class="header-area">
+                        @Html.Partial("_Header")
+                        @Html.Partial("_Slider")
+                        
+                        
+                    </div>
+                    <!-- header-area -->
+                </div>
+                <!-- end rays -->
+            </div>
+            <!-- end header-holder -->
+        </div>
+        <!-- end header -->
+        <div id="main">
+            <div class="main-area ">
+                <div class="main-holder">
+                    
+                    
+                    <div id="content" class="content_full_width">
+                        @if (false && User.IsInRole("Admin"))
+                        {
+                            <div id="sidebar">
+                                <h3>Admin Menu</h3>
+                                @Html.Partial("_AdminMenu")
+                            </div>
+                        }
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- end content -->
+            </div>
+          
+            <!-- main-area -->
+
+
+            @Html.Partial("_Footer")
+
+        </div>
+        <!-- end main -->
+    </div>
+    <!-- end wrapper -->
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.cycle.all.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-2-slider.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/small-jquery-2-slider.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/testimonial-slider.js")"></script>
+    <script type="text/javascript">
+        if (TTjquery.browser.msie) { TTjquery(window).load(function () { TTjquery('.big-banner #main .main-area').css("padding-top", "138px"); }); } else { }
+    </script>
+</body>
+</html>

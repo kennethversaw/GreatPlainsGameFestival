@@ -1,0 +1,5 @@
+﻿@model GreatPlainsGameFestival.Models.TimeSlot
+@if(Model != null)
+{
+    @Model.StartTime.ToShortTimeString() @:- @Model.EndTime.ToShortTimeString()
+}
